@@ -13,38 +13,12 @@ NODE_SIZE = 500
 
 
 def get_filename(directory: str) -> str:
-    """
-    Returns the filename by extracting it from an absolute path
 
-    Parameters
-    ----------
-    directory : str
-        the absolute file path
-
-    Returns
-    -------
-    str :
-        the filename
-
-    """
     return directory.rsplit(SEPARATOR)[-1]
 
 
 def graph_builder(file_path: str) -> nx.Graph:
-    """
-    Function that construct networkx.Graph using generator
 
-    Parameters
-    ----------
-    file_path : str
-        directory to file to read graph
-
-    Returns
-    -------
-    `~networkx.Graph` :
-        graph constructing from the text file located in file_path
-
-    """
     graph = nx.Graph()
     #with open('../topo.txt', 'r') as file:
     with open('topo.txt', 'r') as file:

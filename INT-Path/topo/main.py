@@ -40,29 +40,10 @@ def get_logger() -> logging.Logger:
 
 def main(start: object, file_path: str = DEFAULT_SOURCE,
          algorithm: str = DEFAULT_ALGORITHM, storage: str = DEFAULT_STORAGE) -> bool:
-    """
-    The main function that call other functions
 
-    Parameters
-    ----------
-    start : object
-        any hashable object
-    file_path : str
-        directory to file to read graph
-    algorithm : str, default: 'dfs'
-        the name of the algorithm you want to apply to the graph
-    storage : str, default: '../output/'
-        directory where you want to save the gif file
-
-    Returns
-    -------
-    bool :
-        True if the file was created and no errors occurred,
-        False otherwise
-
-    """
     logger = get_logger()
-    fig = plt.figure()
+    #调整大小
+    fig = plt.figure(figsize=(6, 5))
     #plt.title(f'{algorithm.upper()} for graph from ...{get_filename(file_path)}')
     #标题
     plt.title(f'Euler Balance Algorithm')
