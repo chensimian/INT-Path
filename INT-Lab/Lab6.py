@@ -26,6 +26,7 @@ def line_chart(lab_num,title,x_label,y_label,index_col,font_title,font_xlabel,fo
     plt.figure(figsize=(8, 4))  #调图片大小的
     plt.grid(linestyle='-.',axis='x')  #显示对标x轴的线
     plt.grid(linestyle='-.', axis='y')  # 显示对标y轴的线
+    plt.ylim(0, 0.12)
     plt.rcParams['font.sans-serif'] = ['SimHei']    #用来正常显示中文标签
     plt.rcParams['axes.unicode_minus'] = False      #用来正常显示负号
     plt.rcParams['font.sans-serif'] = ['Times New Roman']
