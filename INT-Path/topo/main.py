@@ -47,6 +47,8 @@ def main(start: object, file_path: str = DEFAULT_SOURCE,
     #plt.title(f'{algorithm.upper()} for graph from ...{get_filename(file_path)}')
     #标题
     plt.title(f'Euler Balance Algorithm')
+    plt.title('Euler (Balance) Algorithm',loc='center')
+    plt.rcParams['font.sans-serif'] = ['Times New Roman']
     camera = Camera(fig)
     graph = graph_builder(file_path)
     if create_gif(graph, camera, func=algorithm, start=start, source=file_path, storage=storage):
