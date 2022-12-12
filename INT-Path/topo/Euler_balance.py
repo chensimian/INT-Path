@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 import matplotlib.pyplot as plt
+import argparse
 import copy
 import random
 import networkx as nx
@@ -433,10 +434,14 @@ def variance(Q):
 	return var
 
 if __name__ == '__main__':
-	topo, oddCount= randomTopo.createRandomTopo(9)
-	num_fleury, num_path, q= find_path(topo)
+	#exe的执行配置
+	parser = argparse.ArgumentParser(description='Create graph traversing visualization.')
+	parser.add_argument('-num', type=int, help='The num of createRandomTopo.')
+	args = parser.parse_args()
+	topo, oddCount= randomTopo.createRandomTopo(args.num)
+	num_fleury, num_path, q = find_path(topo)
 	# 写入topo
-	with open('topo.txt', 'w') as f:
+	with open('D:\\topo.txt', 'w') as f:
 		n = len(topo)
 		m = len(topo[0])
 		for i in range(n):
@@ -445,7 +450,7 @@ if __name__ == '__main__':
 					f.write('{} {}\n'.format(i, j))
 	
 	# 写入path
-	with open('path.txt', 'w') as f:
+	with open('D:\\path.txt', 'w') as f:
 		for path in q:
 			n = len(path)
 			for i in range(n - 1):
